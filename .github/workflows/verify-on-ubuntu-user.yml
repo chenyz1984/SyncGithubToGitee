@@ -1,7 +1,7 @@
 on:
   push:
   pull_request_target:
-    branches: [master]
+    branches: [main]
 name: Tests / test-user-mirror
 jobs:
   run:
@@ -13,11 +13,11 @@ jobs:
     - name: Mirror Github to Gitee with white list
       uses: ./.
       with:
-        src: github/Yikun
-        dst: gitee/yikunkero
+        src: github/chenyz1984
+        dst: gitee/chenyingzi
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token:  ${{ secrets.GITEE_TOKEN }}
-        static_list: 'hub-mirror-action,hashes, simple-spring'
+        static_list: 'FluentPython2ndCN'
         force_update: true
         debug: true
-        mappings: 'hashes=>hashes_gitee'
+        mappings: 'FluentPython2ndCN=>FluentPython2ndCN'
